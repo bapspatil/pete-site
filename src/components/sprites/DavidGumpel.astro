@@ -1,0 +1,115 @@
+---
+interface Props {
+  class?: string;
+  ariaLabel?: string;
+}
+const { class: className = "", ariaLabel } = Astro.props;
+// 20x24 — pixel-art portrait of David Gumpel, founder of PETU.
+// Dirty-blonde sweep, stubble goatee, black button-up, single gold earring.
+---
+<svg
+  viewBox="0 0 20 24"
+  class={className}
+  shape-rendering="crispEdges"
+  role={ariaLabel ? "img" : undefined}
+  aria-label={ariaLabel}
+  aria-hidden={ariaLabel ? undefined : "true"}
+>
+  <!-- photo background -->
+  <rect x="0" y="0" width="20" height="24" fill="#f4e8cf" />
+
+  <!-- face base -->
+  <rect x="5" y="6" width="11" height="1" fill="#f3d1a6" />
+  <rect x="4" y="7" width="13" height="1" fill="#f3d1a6" />
+  <rect x="4" y="8" width="13" height="1" fill="#f3d1a6" />
+  <rect x="4" y="9" width="13" height="1" fill="#f3d1a6" />
+  <rect x="4" y="10" width="13" height="1" fill="#f3d1a6" />
+  <rect x="4" y="11" width="13" height="1" fill="#f3d1a6" />
+  <rect x="4" y="12" width="12" height="1" fill="#f3d1a6" />
+  <rect x="5" y="13" width="10" height="1" fill="#f3d1a6" />
+  <rect x="5" y="14" width="10" height="1" fill="#f3d1a6" />
+  <rect x="6" y="15" width="8" height="1" fill="#f3d1a6" />
+
+  <!-- hair silhouette -->
+  <rect x="5" y="1" width="10" height="1" fill="#c9a46a" />
+  <rect x="4" y="2" width="12" height="1" fill="#c9a46a" />
+  <rect x="3" y="3" width="14" height="1" fill="#c9a46a" />
+  <rect x="3" y="4" width="14" height="1" fill="#c9a46a" />
+  <rect x="3" y="5" width="14" height="1" fill="#c9a46a" />
+
+  <!-- bangs over forehead -->
+  <rect x="3" y="6" width="3" height="1" fill="#c9a46a" />
+  <rect x="14" y="6" width="3" height="1" fill="#c9a46a" />
+
+  <!-- temples -->
+  <rect x="3" y="7" width="1" height="2" fill="#c9a46a" />
+  <rect x="16" y="7" width="1" height="2" fill="#c9a46a" />
+
+  <!-- sideburn stubble -->
+  <rect x="3" y="9" width="1" height="1" fill="#8d6e3e" />
+  <rect x="16" y="9" width="1" height="1" fill="#8d6e3e" />
+
+  <!-- hair highlights (viewer-left sweep) -->
+  <rect x="5" y="1" width="5" height="1" fill="#e0bc7e" />
+  <rect x="4" y="2" width="5" height="1" fill="#e0bc7e" />
+
+  <!-- hair shadow right -->
+  <rect x="13" y="3" width="4" height="1" fill="#8d6e3e" />
+  <rect x="14" y="4" width="3" height="1" fill="#8d6e3e" />
+  <rect x="15" y="5" width="2" height="1" fill="#8d6e3e" />
+
+  <!-- ear + earring -->
+  <rect x="16" y="10" width="1" height="2" fill="#d9a87a" />
+  <rect x="16" y="11" width="1" height="1" fill="#f2c94c" />
+
+  <!-- eyebrows -->
+  <rect x="5" y="7" width="3" height="1" fill="#8d6e3e" />
+  <rect x="12" y="7" width="3" height="1" fill="#8d6e3e" />
+
+  <!-- eyes -->
+  <rect x="6" y="8" width="1" height="1" fill="#14261c" />
+  <rect x="13" y="8" width="1" height="1" fill="#14261c" />
+
+  <!-- smile crinkles -->
+  <rect x="6" y="9" width="1" height="1" fill="#d9a87a" />
+  <rect x="13" y="9" width="1" height="1" fill="#d9a87a" />
+
+  <!-- nose -->
+  <rect x="10" y="10" width="1" height="1" fill="#d9a87a" />
+  <rect x="9" y="11" width="2" height="1" fill="#d9a87a" />
+
+  <!-- mustache stubble -->
+  <rect x="7" y="11" width="2" height="1" fill="#6b4a2a" />
+  <rect x="11" y="11" width="2" height="1" fill="#6b4a2a" />
+
+  <!-- smile with teeth -->
+  <rect x="7" y="12" width="1" height="1" fill="#14261c" />
+  <rect x="8" y="12" width="4" height="1" fill="#f4e8cf" />
+  <rect x="12" y="12" width="1" height="1" fill="#14261c" />
+
+  <!-- beard stubble -->
+  <rect x="5" y="13" width="3" height="1" fill="#6b4a2a" />
+  <rect x="12" y="13" width="3" height="1" fill="#6b4a2a" />
+  <rect x="6" y="14" width="3" height="1" fill="#6b4a2a" />
+  <rect x="11" y="14" width="3" height="1" fill="#6b4a2a" />
+
+  <!-- neck -->
+  <rect x="7" y="16" width="6" height="1" fill="#d9a87a" />
+
+  <!-- black button-up shirt -->
+  <rect x="4" y="17" width="12" height="1" fill="#14261c" />
+  <rect x="3" y="18" width="14" height="1" fill="#14261c" />
+  <rect x="2" y="19" width="16" height="1" fill="#14261c" />
+  <rect x="1" y="20" width="18" height="1" fill="#14261c" />
+  <rect x="0" y="21" width="20" height="1" fill="#14261c" />
+  <rect x="0" y="22" width="20" height="1" fill="#14261c" />
+  <rect x="0" y="23" width="20" height="1" fill="#14261c" />
+
+  <!-- collar V-opening -->
+  <rect x="9" y="17" width="2" height="1" fill="#d9a87a" />
+  <rect x="9" y="18" width="2" height="1" fill="#d9a87a" />
+
+  <!-- collar highlights -->
+  <rect x="8" y="17" width="1" height="1" fill="#2a1f19" />
+  <rect x="11" y="17" width="1" height="1" fill="#2a1f19" />
+</svg>

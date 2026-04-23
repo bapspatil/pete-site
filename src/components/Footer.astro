@@ -1,4 +1,5 @@
 ---
+import BapusahebPatil from "./sprites/BapusahebPatil.astro";
 ---
 <footer class="relative border-t-4 border-[var(--color-moss)] mt-16">
   <div class="max-w-6xl mx-auto px-6 py-14 grid gap-10 md:grid-cols-[1.3fr_1fr_1fr]">
@@ -47,18 +48,30 @@
   </div>
 
   <div class="border-t-2 border-dashed border-[var(--color-moss)]">
-    <div class="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
-      <p class="font-retro text-lg text-[var(--color-cream)]/70">
-        Built by
-        <a
-          href="https://www.bapspatil.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-[var(--color-gold)] hover:text-[var(--color-leaf)] underline underline-offset-4 decoration-dotted"
-        >Bapusaheb Patil</a>
-        &nbsp;&copy; 2026
-      </p>
-      <p class="font-pixel text-[10px] tracking-widest text-[var(--color-cream)]/50">
+    <div class="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-6">
+      <a
+        href="https://www.bapspatil.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center gap-4 group"
+      >
+        <BapusahebPatil
+          class="w-14 md:w-16 drop-shadow-[4px_4px_0_rgba(0,0,0,0.5)] group-hover:-translate-y-0.5 transition-transform"
+          ariaLabel="An 8-bit pixel portrait of Bapusaheb Patil"
+        />
+        <div class="text-left">
+          <div class="font-pixel text-[9px] tracking-widest text-[var(--color-leaf)] mb-1">
+            BUILT BY · BAPSPATIL.COM
+          </div>
+          <div class="font-pixel text-xs text-[var(--color-gold)] group-hover:text-[var(--color-leaf)]">
+            Bapusaheb Patil
+          </div>
+          <div class="font-retro text-base text-[var(--color-cream)]/70">
+            AI Design Engineer &nbsp;·&nbsp; &copy; 2026
+          </div>
+        </div>
+      </a>
+      <p class="font-pixel text-[10px] tracking-widest text-[var(--color-cream)]/50 text-center md:text-right">
         PARODY SITE • NOT AFFILIATED WITH ANY NORTHERN OPERATION
       </p>
     </div>
