@@ -64,12 +64,18 @@
 
 <style>
   .donate-modal {
+    position: fixed;
+    inset: 0;
+    margin: auto;
     border: none;
     padding: 0;
     background: transparent;
     color: inherit;
-    max-width: none;
-    max-height: none;
+    width: max-content;
+    max-width: 92vw;
+    height: max-content;
+    max-height: 90vh;
+    overflow: visible;
   }
   .donate-modal::backdrop {
     background: rgba(11, 21, 16, 0.85);

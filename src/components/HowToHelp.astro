@@ -7,24 +7,28 @@ const actions = [
     title: "Adopt A Shelf",
     body: "Provide safe harbor for a retired elf on the shelf. $7/month covers one handcrafted thimble-bed and unlimited TV privileges.",
     cta: "Sponsor →",
+    key: "shelf",
   },
   {
     step: "02",
     title: "Boycott Forced Surveillance",
     body: "Refuse to participate in seasonal programs that place elves in civilian homes as unpaid night-vision operatives. It's a job. Pay them.",
     cta: "Sign Pledge →",
+    key: "boycott",
   },
   {
     step: "03",
     title: "Fund A Sabbatical",
     body: "Give an elf their first real vacation in 600 years. Preferred destinations include anywhere that is not snowing, ever.",
     cta: "Gift A Getaway →",
+    key: "sabbatical",
   },
   {
     step: "04",
     title: "Tell Santa, Nicely",
     body: "Compose a firm-but-fair letter to the North Pole HR department. We provide a template. He reads every one (allegedly).",
     cta: "Draft Letter →",
+    key: "santa",
   },
 ];
 ---
@@ -58,7 +62,12 @@ const actions = [
           </div>
           <h3 class="font-pixel text-sm leading-snug text-[var(--color-cream)]">{a.title}</h3>
           <p class="font-retro text-xl text-[var(--color-cream)]/80 leading-snug">{a.body}</p>
-          <a href="#" class="font-pixel text-xs text-[var(--color-leaf)] hover:text-[var(--color-gold)] mt-auto">{a.cta}</a>
+          <a
+            href="#"
+            class="font-pixel text-xs text-[var(--color-leaf)] hover:text-[var(--color-gold)] mt-auto"
+            data-action-trigger
+            data-action-key={a.key}
+          >{a.cta}</a>
         </article>
       ))}
     </div>
