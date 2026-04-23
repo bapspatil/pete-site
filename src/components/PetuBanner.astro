@@ -1,0 +1,56 @@
+---
+import UnicornPartner from "./sprites/UnicornPartner.astro";
+---
+<section id="petu" class="relative px-6 pb-16 md:pb-24">
+  <div class="max-w-6xl mx-auto">
+    <div
+      class="pixel-card p-8 md:p-10 relative overflow-hidden"
+      style="background: linear-gradient(180deg, #1a1220 0%, #0f0a17 100%); border-color: #d9b3d9;"
+      data-reveal
+    >
+      <div class="grid gap-8 md:grid-cols-[auto_1fr_auto] items-center">
+        <div class="flex justify-center md:justify-start">
+          <UnicornPartner
+            class="w-40 md:w-48 drop-shadow-[6px_6px_0_rgba(0,0,0,0.5)]"
+            ariaLabel="An 8-bit pastel unicorn with a rainbow mane"
+          />
+        </div>
+
+        <div class="text-center md:text-left">
+          <div class="flex items-center gap-3 justify-center md:justify-start mb-3">
+            <span class="inline-block w-8 h-[3px]" style="background: #d9b3d9;"></span>
+            <span class="font-pixel text-[10px] tracking-widest" style="color: #d9b3d9;">
+              IN PARTNERSHIP WITH
+            </span>
+            <span class="inline-block w-8 h-[3px]" style="background: #d9b3d9;"></span>
+          </div>
+          <h3 class="font-pixel text-xl md:text-3xl leading-snug text-[var(--color-cream)]">
+            PETE <span style="color: #d9b3d9;">×</span>
+            <span style="color: #f2c94c;">PETU</span>
+          </h3>
+          <p class="font-retro text-xl md:text-2xl text-[var(--color-cream)]/85 mt-3 max-w-xl">
+            We've joined forces with our horned counterparts at
+            <strong style="color: #d9b3d9;">PETU</strong> —
+            People for Ethical Treatment of Unicorns — because elves deserve unions,
+            and unicorns deserve more than glitter-based compensation.
+          </p>
+          <p class="font-retro text-lg text-[var(--color-cream)]/70 mt-3 max-w-xl">
+            Stop the rainbow extraction. End the birthday-party gig economy. Pay the horn tax.
+          </p>
+        </div>
+
+        <div class="flex justify-center md:justify-end">
+          <a
+            href="https://petu.info"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="pixel-btn"
+            style="background: #d9b3d9; border-color: var(--color-cream);"
+          >
+            Visit PETU →
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

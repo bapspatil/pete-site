@@ -1,0 +1,80 @@
+---
+interface Props {
+  class?: string;
+  ariaLabel?: string;
+}
+const { class: className = "", ariaLabel } = Astro.props;
+// 28x24 — pastel unicorn with rainbow mane and golden horn, facing right
+---
+<svg
+  viewBox="0 0 28 24"
+  class={className}
+  shape-rendering="crispEdges"
+  role={ariaLabel ? "img" : undefined}
+  aria-label={ariaLabel}
+  aria-hidden={ariaLabel ? undefined : "true"}
+>
+  <!-- horn -->
+  <rect x="17" y="1" width="1" height="1" fill="#f2c94c" />
+  <rect x="16" y="2" width="2" height="1" fill="#f2c94c" />
+  <rect x="16" y="3" width="2" height="1" fill="#e0a82c" />
+  <!-- ears -->
+  <rect x="14" y="3" width="1" height="2" fill="#f4e8cf" />
+  <rect x="19" y="3" width="1" height="2" fill="#f4e8cf" />
+  <rect x="14" y="4" width="1" height="1" fill="#d9b3d9" />
+  <rect x="19" y="4" width="1" height="1" fill="#d9b3d9" />
+  <!-- head -->
+  <rect x="14" y="5" width="7" height="1" fill="#f4e8cf" />
+  <rect x="13" y="6" width="9" height="1" fill="#f4e8cf" />
+  <rect x="13" y="7" width="10" height="1" fill="#f4e8cf" />
+  <rect x="13" y="8" width="10" height="1" fill="#f4e8cf" />
+  <rect x="14" y="9" width="9" height="1" fill="#f4e8cf" />
+  <!-- eye -->
+  <rect x="20" y="7" width="1" height="1" fill="#14261c" />
+  <!-- nostril -->
+  <rect x="22" y="8" width="1" height="1" fill="#d9b3d9" />
+  <!-- neck/mane connector -->
+  <rect x="12" y="9" width="3" height="2" fill="#f4e8cf" />
+  <!-- rainbow mane -->
+  <rect x="11" y="4" width="1" height="2" fill="#d44b3a" />
+  <rect x="10" y="5" width="1" height="2" fill="#d44b3a" />
+  <rect x="11" y="6" width="1" height="2" fill="#e89242" />
+  <rect x="10" y="7" width="1" height="2" fill="#e89242" />
+  <rect x="12" y="7" width="1" height="2" fill="#f2c94c" />
+  <rect x="11" y="8" width="1" height="2" fill="#f2c94c" />
+  <rect x="10" y="9" width="2" height="2" fill="#6abf5a" />
+  <rect x="11" y="10" width="2" height="2" fill="#6abf5a" />
+  <rect x="10" y="11" width="2" height="2" fill="#4fa3d9" />
+  <rect x="12" y="11" width="1" height="2" fill="#a87ad1" />
+  <!-- body -->
+  <rect x="5" y="10" width="10" height="1" fill="#f4e8cf" />
+  <rect x="4" y="11" width="12" height="1" fill="#f4e8cf" />
+  <rect x="3" y="12" width="13" height="1" fill="#f4e8cf" />
+  <rect x="3" y="13" width="13" height="1" fill="#f4e8cf" />
+  <rect x="3" y="14" width="13" height="1" fill="#f4e8cf" />
+  <rect x="4" y="15" width="12" height="1" fill="#f4e8cf" />
+  <!-- body shading -->
+  <rect x="5" y="14" width="10" height="1" fill="#d9b3d9" />
+  <!-- legs -->
+  <rect x="4" y="16" width="2" height="5" fill="#f4e8cf" />
+  <rect x="7" y="16" width="2" height="5" fill="#f4e8cf" />
+  <rect x="11" y="16" width="2" height="5" fill="#f4e8cf" />
+  <rect x="14" y="16" width="2" height="5" fill="#f4e8cf" />
+  <!-- hooves -->
+  <rect x="4" y="21" width="2" height="1" fill="#14261c" />
+  <rect x="7" y="21" width="2" height="1" fill="#14261c" />
+  <rect x="11" y="21" width="2" height="1" fill="#14261c" />
+  <rect x="14" y="21" width="2" height="1" fill="#14261c" />
+  <!-- rainbow tail -->
+  <rect x="2" y="11" width="1" height="2" fill="#d44b3a" />
+  <rect x="1" y="12" width="1" height="2" fill="#e89242" />
+  <rect x="0" y="13" width="1" height="2" fill="#f2c94c" />
+  <rect x="1" y="14" width="1" height="2" fill="#6abf5a" />
+  <rect x="2" y="15" width="1" height="2" fill="#4fa3d9" />
+  <rect x="2" y="17" width="1" height="1" fill="#a87ad1" />
+  <!-- sparkle -->
+  <rect x="24" y="2" width="1" height="1" fill="#f2c94c" />
+  <rect x="25" y="3" width="1" height="1" fill="#f4e8cf" />
+  <rect x="24" y="4" width="1" height="1" fill="#f2c94c" />
+  <rect x="23" y="3" width="1" height="1" fill="#f2c94c" />
+</svg>
