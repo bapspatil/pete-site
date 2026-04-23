@@ -1,0 +1,77 @@
+---
+interface Props {
+  class?: string;
+  ariaLabel?: string;
+}
+const { class: className = "", ariaLabel } = Astro.props;
+// 20x28 grid — front-facing sad elf with green tunic, pointy red hat, tiny boots
+---
+<svg
+  viewBox="0 0 20 28"
+  class={className}
+  shape-rendering="crispEdges"
+  role={ariaLabel ? "img" : undefined}
+  aria-label={ariaLabel}
+  aria-hidden={ariaLabel ? undefined : "true"}
+>
+  <!-- red pointy hat -->
+  <rect x="9" y="0" width="2" height="1" fill="#c43a2a" />
+  <rect x="8" y="1" width="4" height="1" fill="#c43a2a" />
+  <rect x="7" y="2" width="6" height="1" fill="#c43a2a" />
+  <rect x="6" y="3" width="8" height="1" fill="#c43a2a" />
+  <rect x="5" y="4" width="10" height="1" fill="#c43a2a" />
+  <!-- hat brim -->
+  <rect x="5" y="5" width="10" height="1" fill="#f4e8cf" />
+  <!-- face -->
+  <rect x="6" y="6" width="8" height="1" fill="#f3d1a6" />
+  <rect x="5" y="7" width="10" height="1" fill="#f3d1a6" />
+  <rect x="5" y="8" width="10" height="1" fill="#f3d1a6" />
+  <!-- pointy ears -->
+  <rect x="4" y="8" width="1" height="2" fill="#f3d1a6" />
+  <rect x="15" y="8" width="1" height="2" fill="#f3d1a6" />
+  <rect x="3" y="9" width="1" height="1" fill="#f3d1a6" />
+  <rect x="16" y="9" width="1" height="1" fill="#f3d1a6" />
+  <!-- sad eyes -->
+  <rect x="7" y="8" width="1" height="1" fill="#14261c" />
+  <rect x="12" y="8" width="1" height="1" fill="#14261c" />
+  <!-- eye bags -->
+  <rect x="6" y="9" width="3" height="1" fill="#c79a74" />
+  <rect x="11" y="9" width="3" height="1" fill="#c79a74" />
+  <!-- nose -->
+  <rect x="9" y="9" width="2" height="1" fill="#e0b389" />
+  <!-- mouth (frown) -->
+  <rect x="8" y="10" width="4" height="1" fill="#14261c" />
+  <rect x="7" y="11" width="1" height="1" fill="#14261c" />
+  <rect x="12" y="11" width="1" height="1" fill="#14261c" />
+  <!-- neck -->
+  <rect x="8" y="11" width="4" height="1" fill="#f3d1a6" />
+  <!-- green tunic -->
+  <rect x="5" y="12" width="10" height="1" fill="#2f5c44" />
+  <rect x="4" y="13" width="12" height="1" fill="#2f5c44" />
+  <rect x="4" y="14" width="12" height="1" fill="#2f5c44" />
+  <rect x="4" y="15" width="12" height="1" fill="#6abf5a" />
+  <rect x="4" y="16" width="12" height="1" fill="#2f5c44" />
+  <rect x="4" y="17" width="12" height="1" fill="#2f5c44" />
+  <!-- yellow belt buckle -->
+  <rect x="9" y="18" width="2" height="1" fill="#f2c94c" />
+  <rect x="4" y="18" width="5" height="1" fill="#14261c" />
+  <rect x="11" y="18" width="5" height="1" fill="#14261c" />
+  <!-- arms -->
+  <rect x="2" y="13" width="2" height="4" fill="#2f5c44" />
+  <rect x="16" y="13" width="2" height="4" fill="#2f5c44" />
+  <rect x="2" y="17" width="2" height="1" fill="#f3d1a6" />
+  <rect x="16" y="17" width="2" height="1" fill="#f3d1a6" />
+  <!-- tear drop -->
+  <rect x="7" y="10" width="1" height="1" fill="#6dc1d9" />
+  <!-- legs -->
+  <rect x="6" y="19" width="3" height="5" fill="#8b5a3c" />
+  <rect x="11" y="19" width="3" height="5" fill="#8b5a3c" />
+  <!-- curled boots -->
+  <rect x="5" y="24" width="4" height="2" fill="#14261c" />
+  <rect x="11" y="24" width="4" height="2" fill="#14261c" />
+  <rect x="4" y="25" width="1" height="1" fill="#14261c" />
+  <rect x="15" y="25" width="1" height="1" fill="#14261c" />
+  <!-- boot bells -->
+  <rect x="3" y="25" width="1" height="1" fill="#f2c94c" />
+  <rect x="16" y="25" width="1" height="1" fill="#f2c94c" />
+</svg>

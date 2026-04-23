@@ -1,0 +1,43 @@
+---
+const quotes = [
+  {
+    quote: "I hadn't slept since 1847. PETE got me a weighted blanket and a long weekend in Ibiza. I'm a new elf.",
+    name: "Twinkle Greenleaf",
+    title: "Former Sewing Machinist, Workshop 14",
+  },
+  {
+    quote: "For 312 years my only vocabulary was 'merry' and 'ho'. Now I have opinions about jazz. Thank you, PETE.",
+    name: "Bramble Oakfoot",
+    title: "Recovering Ornament Stacker",
+  },
+  {
+    quote: "They told us the big guy was 'family'. Turns out 'family' pays in crumbs. I walked out. You can too.",
+    name: "Mistletoe Fizzwick",
+    title: "PETE Advocacy Lead, Northern Hemisphere",
+  },
+];
+---
+<section id="voices" class="relative py-24 md:py-32 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex items-center gap-4 mb-4" data-reveal>
+      <span class="inline-block w-12 h-[3px] bg-[var(--color-leaf)]"></span>
+      <span class="font-pixel text-xs tracking-widest text-[var(--color-leaf)]">VOICES OF THE LIBERATED</span>
+    </div>
+    <h2 class="font-pixel text-2xl md:text-4xl leading-snug text-[var(--color-cream)] max-w-3xl" data-reveal>
+      Real elves.<br /><span class="text-[var(--color-gold)]">Real(ish) stories.</span>
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-14">
+      {quotes.map((q) => (
+        <figure class="pixel-card p-8 flex flex-col gap-5" data-reveal>
+          <div class="font-pixel text-4xl text-[var(--color-gold)] leading-none">&ldquo;</div>
+          <blockquote class="font-retro text-xl text-[var(--color-cream)]/90 leading-snug">{q.quote}</blockquote>
+          <figcaption class="mt-auto pt-4 border-t-2 border-dashed border-[var(--color-moss)]">
+            <div class="font-pixel text-[11px] text-[var(--color-cream)]">{q.name}</div>
+            <div class="font-retro text-base text-[var(--color-cream)]/60 mt-1">{q.title}</div>
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  </div>
+</section>

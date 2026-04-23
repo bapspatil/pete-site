@@ -1,0 +1,82 @@
+---
+import ElfLiberated from "./sprites/ElfLiberated.astro";
+
+const actions = [
+  {
+    step: "01",
+    title: "Adopt A Shelf",
+    body: "Provide safe harbor for a retired elf on the shelf. $7/month covers one handcrafted thimble-bed and unlimited TV privileges.",
+    cta: "Sponsor →",
+  },
+  {
+    step: "02",
+    title: "Boycott Forced Surveillance",
+    body: "Refuse to participate in seasonal programs that place elves in civilian homes as unpaid night-vision operatives. It's a job. Pay them.",
+    cta: "Sign Pledge →",
+  },
+  {
+    step: "03",
+    title: "Fund A Sabbatical",
+    body: "Give an elf their first real vacation in 600 years. Preferred destinations include anywhere that is not snowing, ever.",
+    cta: "Gift A Getaway →",
+  },
+  {
+    step: "04",
+    title: "Tell Santa, Nicely",
+    body: "Compose a firm-but-fair letter to the North Pole HR department. We provide a template. He reads every one (allegedly).",
+    cta: "Draft Letter →",
+  },
+];
+---
+<section id="help" class="relative py-24 md:py-32 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid md:grid-cols-[2fr_1fr] gap-10 items-end mb-14">
+      <div>
+        <div class="flex items-center gap-4 mb-4" data-reveal>
+          <span class="inline-block w-12 h-[3px] bg-[var(--color-leaf)]"></span>
+          <span class="font-pixel text-xs tracking-widest text-[var(--color-leaf)]">TAKE ACTION</span>
+        </div>
+        <h2 class="font-pixel text-2xl md:text-4xl leading-snug text-[var(--color-cream)]" data-reveal>
+          Four Ways To<br />
+          <span class="text-[var(--color-gold)]">Be On The Right Side</span> Of History.
+        </h2>
+        <p class="font-retro text-xl md:text-2xl text-[var(--color-cream)]/80 mt-6 max-w-xl" data-reveal>
+          Every small action matters. Except leaving milk out. That's literally part of the problem.
+        </p>
+      </div>
+      <div class="flex justify-center md:justify-end" data-reveal>
+        <ElfLiberated class="w-48 md:w-56 drop-shadow-[6px_6px_0_rgba(0,0,0,0.5)]" data-sprite-idle ariaLabel="An 8-bit elf raising a protest banner" />
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {actions.map((a) => (
+        <article class="pixel-card p-8 flex flex-col gap-4 hover:-translate-y-1 transition-transform" data-reveal>
+          <div class="flex items-start justify-between gap-4">
+            <div class="font-pixel text-3xl text-[var(--color-gold)]">{a.step}</div>
+            <span class="chip">ACT</span>
+          </div>
+          <h3 class="font-pixel text-sm leading-snug text-[var(--color-cream)]">{a.title}</h3>
+          <p class="font-retro text-xl text-[var(--color-cream)]/80 leading-snug">{a.body}</p>
+          <a href="#" class="font-pixel text-xs text-[var(--color-leaf)] hover:text-[var(--color-gold)] mt-auto">{a.cta}</a>
+        </article>
+      ))}
+    </div>
+
+    <div class="mt-16 pixel-card p-8 md:p-12 text-center" data-reveal>
+      <h3 class="font-pixel text-lg md:text-2xl leading-snug text-[var(--color-cream)]">
+        Donate <span class="text-[var(--color-gold)]">one cookie</span>.<br />
+        Save <span class="text-[var(--color-leaf)]">an entire workshop</span>.
+      </h3>
+      <p class="font-retro text-xl text-[var(--color-cream)]/80 mt-4 max-w-xl mx-auto">
+        100% of all donations go directly to elf sabbatical funds, mushroom-circle restoration, and a
+        very comfortable beanbag for the PETE mascot, Gilbert.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4 mt-8">
+        <a href="#" class="pixel-btn">Donate $7</a>
+        <a href="#" class="pixel-btn">Donate $24</a>
+        <a href="#" class="pixel-btn pixel-btn-ghost">Other Amount</a>
+      </div>
+    </div>
+  </div>
+</section>

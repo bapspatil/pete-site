@@ -1,0 +1,61 @@
+---
+import ElfWorker from "./sprites/ElfWorker.astro";
+
+const stats = [
+  { value: 87, suffix: "%", label: "of elves work more than 300 nights per year without scheduled breaks" },
+  { value: 0, suffix: "", label: "unionized elven workshops exist on any known continent" },
+  { value: 1.2, suffix: "B", decimals: 1, label: "cookies consumed annually as the sole legal tender" },
+  { value: 14, suffix: "mm", label: "average daily height loss among elves during peak season" },
+];
+---
+<section id="crisis" class="relative py-24 md:py-32 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex items-center gap-4 mb-4" data-reveal>
+      <span class="inline-block w-12 h-[3px] bg-[var(--color-danger)]"></span>
+      <span class="font-pixel text-xs tracking-widest text-[var(--color-danger)]">THE CRISIS</span>
+    </div>
+    <h2 class="font-pixel text-2xl md:text-4xl leading-snug text-[var(--color-cream)] max-w-3xl" data-reveal>
+      The Numbers <span class="text-[var(--color-danger)]">Don't Lie</span>.<br />
+      <span class="text-[var(--color-cream)]/70">(The Elves Would, Under Duress.)</span>
+    </h2>
+    <p class="font-retro text-xl md:text-2xl text-[var(--color-cream)]/80 mt-6 max-w-2xl" data-reveal>
+      Through tireless field research — and several very confused interviews conducted in a reindeer stable —
+      PETE has uncovered the following, definitely-real statistics.
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-14">
+      {stats.map((stat) => (
+        <div class="pixel-card p-6 relative" data-reveal>
+          <div
+            class="font-pixel text-3xl md:text-4xl text-[var(--color-gold)]"
+            data-counter
+            data-counter-target={String(stat.value)}
+            data-counter-decimals={String(stat.decimals ?? 0)}
+            data-counter-suffix={stat.suffix}
+          >
+            0{stat.suffix}
+          </div>
+          <p class="font-retro text-lg text-[var(--color-cream)]/85 mt-4 leading-snug">{stat.label}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-20 grid md:grid-cols-[1fr_1.2fr] gap-10 items-center">
+      <div class="flex justify-center" data-reveal>
+        <ElfWorker class="w-64 md:w-80 drop-shadow-[6px_6px_0_rgba(0,0,0,0.5)]" data-sprite-idle ariaLabel="A hunched 8-bit elf hammering at a workbench" />
+      </div>
+      <div>
+        <h3 class="font-pixel text-lg md:text-xl leading-snug text-[var(--color-cream)]" data-reveal>
+          A day in the life <span class="text-[var(--color-gold)]">of Tinsel Cogswaddle</span>
+        </h3>
+        <p class="font-retro text-xl text-[var(--color-cream)]/80 mt-4 leading-snug" data-reveal>
+          04:00 — wakes up in a communal hay bunk he shares with six cousins.<br />
+          04:07 — begins stitching button eyes onto 2,400 teddy bears.<br />
+          12:00 — 11-minute lunch of one (1) sugar cookie.<br />
+          22:30 — goes to bed covered in glitter he will never, ever get out.<br />
+          <span class="text-[var(--color-gold)]">Tinsel is 847 years old. He has had one vacation.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

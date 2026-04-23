@@ -1,0 +1,78 @@
+---
+interface Props {
+  class?: string;
+  ariaLabel?: string;
+}
+const { class: className = "", ariaLabel } = Astro.props;
+// 20x28 — elf with fist raised in solidarity, banner/flag
+---
+<svg
+  viewBox="0 0 20 28"
+  class={className}
+  shape-rendering="crispEdges"
+  role={ariaLabel ? "img" : undefined}
+  aria-label={ariaLabel}
+  aria-hidden={ariaLabel ? undefined : "true"}
+>
+  <!-- flag pole -->
+  <rect x="1" y="0" width="1" height="18" fill="#8b5a3c" />
+  <!-- protest banner -->
+  <rect x="2" y="1" width="10" height="6" fill="#d44b3a" />
+  <rect x="3" y="2" width="1" height="1" fill="#f4e8cf" />
+  <rect x="5" y="2" width="1" height="1" fill="#f4e8cf" />
+  <rect x="7" y="2" width="1" height="1" fill="#f4e8cf" />
+  <rect x="9" y="2" width="1" height="1" fill="#f4e8cf" />
+  <rect x="11" y="2" width="1" height="1" fill="#f4e8cf" />
+  <rect x="4" y="4" width="6" height="2" fill="#f4e8cf" />
+  <rect x="5" y="4" width="1" height="2" fill="#d44b3a" />
+  <rect x="7" y="4" width="1" height="2" fill="#d44b3a" />
+  <rect x="9" y="4" width="1" height="2" fill="#d44b3a" />
+  <!-- raised fist arm -->
+  <rect x="2" y="8" width="2" height="1" fill="#2f5c44" />
+  <rect x="2" y="9" width="2" height="1" fill="#2f5c44" />
+  <rect x="2" y="10" width="2" height="1" fill="#2f5c44" />
+  <!-- fist -->
+  <rect x="1" y="7" width="3" height="2" fill="#f3d1a6" />
+  <rect x="0" y="7" width="1" height="1" fill="#f3d1a6" />
+  <rect x="0" y="6" width="1" height="1" fill="#f3d1a6" />
+  <!-- red hat -->
+  <rect x="10" y="4" width="2" height="1" fill="#c43a2a" />
+  <rect x="9" y="5" width="4" height="1" fill="#c43a2a" />
+  <rect x="8" y="6" width="6" height="1" fill="#c43a2a" />
+  <rect x="7" y="7" width="8" height="1" fill="#c43a2a" />
+  <rect x="7" y="8" width="8" height="1" fill="#f4e8cf" />
+  <!-- face determined -->
+  <rect x="7" y="9" width="8" height="1" fill="#f3d1a6" />
+  <rect x="7" y="10" width="8" height="1" fill="#f3d1a6" />
+  <rect x="7" y="11" width="8" height="1" fill="#f3d1a6" />
+  <rect x="6" y="10" width="1" height="1" fill="#f3d1a6" />
+  <rect x="15" y="10" width="1" height="1" fill="#f3d1a6" />
+  <!-- eyes -->
+  <rect x="9" y="10" width="1" height="1" fill="#14261c" />
+  <rect x="12" y="10" width="1" height="1" fill="#14261c" />
+  <!-- mouth determined -->
+  <rect x="9" y="12" width="4" height="1" fill="#14261c" />
+  <!-- body green tunic -->
+  <rect x="6" y="13" width="10" height="1" fill="#2f5c44" />
+  <rect x="5" y="14" width="12" height="1" fill="#2f5c44" />
+  <rect x="5" y="15" width="12" height="1" fill="#6abf5a" />
+  <rect x="5" y="16" width="12" height="1" fill="#2f5c44" />
+  <rect x="5" y="17" width="12" height="1" fill="#2f5c44" />
+  <rect x="5" y="18" width="12" height="1" fill="#2f5c44" />
+  <!-- belt -->
+  <rect x="5" y="19" width="12" height="1" fill="#14261c" />
+  <rect x="10" y="19" width="2" height="1" fill="#f2c94c" />
+  <!-- other arm up fist position (alt) / left arm down -->
+  <rect x="16" y="14" width="2" height="4" fill="#2f5c44" />
+  <rect x="16" y="18" width="2" height="1" fill="#f3d1a6" />
+  <!-- legs striding -->
+  <rect x="6" y="20" width="3" height="4" fill="#8b5a3c" />
+  <rect x="12" y="20" width="3" height="4" fill="#8b5a3c" />
+  <rect x="5" y="24" width="4" height="2" fill="#14261c" />
+  <rect x="12" y="24" width="4" height="2" fill="#14261c" />
+  <!-- boot curls -->
+  <rect x="4" y="25" width="1" height="1" fill="#14261c" />
+  <rect x="16" y="25" width="1" height="1" fill="#14261c" />
+  <rect x="3" y="25" width="1" height="1" fill="#f2c94c" />
+  <rect x="17" y="25" width="1" height="1" fill="#f2c94c" />
+</svg>

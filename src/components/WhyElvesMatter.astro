@@ -1,0 +1,47 @@
+---
+import ElfScholar from "./sprites/ElfScholar.astro";
+
+const pillars = [
+  {
+    title: "Cultural Heritage",
+    body: "Elves have been quietly sustaining seasonal joy since long before recorded history. Their oral tradition is preserved entirely in limericks. Lose the elf, lose the limerick.",
+  },
+  {
+    title: "Ecological Stewards",
+    body: "Elves maintain 83% of the world's remaining mushroom circles. Without their gentle foraging cycle, the entire fairy-industrial complex collapses within two fiscal quarters.",
+  },
+  {
+    title: "The Cookie Economy",
+    body: "An estimated 1.2 billion cookies circulate through elven supply chains each year. If elves vanished overnight, your grandmother's oven would become a speculative asset.",
+  },
+];
+---
+<section id="why" class="relative py-24 md:py-32 px-6 bg-gradient-to-b from-transparent via-[var(--color-forest)]/40 to-transparent">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid md:grid-cols-[1fr_2fr] gap-10 items-end mb-14">
+      <div class="flex justify-center md:justify-start" data-reveal>
+        <ElfScholar class="w-48 md:w-60 drop-shadow-[6px_6px_0_rgba(0,0,0,0.5)]" data-sprite-idle ariaLabel="A scholarly 8-bit elf with a crown and book" />
+      </div>
+      <div>
+        <div class="flex items-center gap-4 mb-4" data-reveal>
+          <span class="inline-block w-12 h-[3px] bg-[var(--color-gold)]"></span>
+          <span class="font-pixel text-xs tracking-widest text-[var(--color-gold)]">WHY ELVES MATTER</span>
+        </div>
+        <h2 class="font-pixel text-2xl md:text-4xl leading-snug text-[var(--color-cream)]" data-reveal>
+          They built your childhood.<br />
+          <span class="text-[var(--color-leaf)]">Now they need ours.</span>
+        </h2>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {pillars.map((p, i) => (
+        <div class="pixel-card p-8 scanline" data-reveal>
+          <div class="font-pixel text-[11px] text-[var(--color-gold)] mb-4">0{i + 1} / 03</div>
+          <h3 class="font-pixel text-sm leading-snug text-[var(--color-cream)]">{p.title}</h3>
+          <p class="font-retro text-xl text-[var(--color-cream)]/80 mt-4 leading-snug">{p.body}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

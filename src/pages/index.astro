@@ -1,17 +1,26 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Nav from "../components/Nav.astro";
+import Hero from "../components/Hero.astro";
+import CrisisStats from "../components/CrisisStats.astro";
+import WhyElvesMatter from "../components/WhyElvesMatter.astro";
+import HowToHelp from "../components/HowToHelp.astro";
+import Testimonials from "../components/Testimonials.astro";
+import Footer from "../components/Footer.astro";
 
+const title = "PETE — People for Ethical Treatment of Elves";
+const description =
+  "A satirical nonprofit advocating for the world's most overlooked workforce. Join the fight for elven dignity, unionized workshops, and real vacations. Parody.";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title={title} description={description}>
+  <Nav />
+  <main>
+    <Hero />
+    <CrisisStats />
+    <WhyElvesMatter />
+    <HowToHelp />
+    <Testimonials />
+  </main>
+  <Footer />
+</BaseLayout>
