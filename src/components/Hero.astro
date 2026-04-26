@@ -1,16 +1,13 @@
 ---
 import ElfHero from "./sprites/ElfHero.astro";
+import PortraitToggle from "./PortraitToggle.astro";
 ---
-<section id="top" class="relative pt-32 pb-24 md:pt-40 md:pb-32 px-6 overflow-hidden">
+<section id="top" class="relative pt-24 pb-16 md:pt-28 md:pb-20 px-6 overflow-hidden">
   <!-- pixel ground -->
-  <div class="absolute inset-x-0 bottom-0 h-24 pointer-events-none" aria-hidden="true">
-    <div class="w-full h-full"
-      style="background-image:
-        linear-gradient(to top, #14261c 0%, transparent 100%),
-        repeating-linear-gradient(90deg, #2f5c44 0 4px, #14261c 4px 8px);
-        background-blend-mode: multiply;">
-    </div>
-  </div>
+  <div
+    class="absolute inset-x-0 bottom-0 h-10 pointer-events-none bg-[var(--color-forest)] border-t-4 border-[var(--color-moss)]"
+    aria-hidden="true"
+  ></div>
 
   <!-- floating snowflakes -->
   <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
@@ -22,40 +19,51 @@ import ElfHero from "./sprites/ElfHero.astro";
     <span class="snowflake" style="left: 88%; animation-delay: -1.5s;"></span>
   </div>
 
-  <div class="relative max-w-6xl mx-auto grid md:grid-cols-[1.2fr_1fr] gap-12 items-center">
-    <div>
-      <span class="chip mb-6" data-reveal>EST. 1823 • PARODY</span>
-      <h1
-        class="font-pixel text-[clamp(1.6rem,5vw,3.25rem)] leading-[1.35] text-[var(--color-cream)] mt-4"
-        data-reveal-char
-      >
-        <span class="word"><span>E</span><span>l</span><span>v</span><span>e</span><span>s</span></span>
-        <span class="word"><span>D</span><span>e</span><span>s</span><span>e</span><span>r</span><span>v</span><span>e</span></span>
-        <br />
-        <span class="word text-[var(--color-gold)]"><span>B</span><span>e</span><span>t</span><span>t</span><span>e</span><span>r</span><span>.</span></span>
-      </h1>
-      <p
-        class="font-retro text-2xl md:text-3xl leading-snug text-[var(--color-cream)]/80 mt-6 max-w-xl"
-        data-reveal
-      >
-        For 1,200 winters, they've toiled in fluorescent-lit workshops under a sugar-based wage
-        system and a single, deeply narcissistic boss. It's time to listen.
-      </p>
-      <div class="flex flex-wrap gap-4 mt-10" data-reveal>
-        <a href="#help" class="pixel-btn">Join The Movement</a>
-        <a href="#crisis" class="pixel-btn pixel-btn-ghost">Learn The Truth</a>
-      </div>
-      <div class="mt-8 flex items-center gap-3 text-[var(--color-cream)]/60 font-retro text-lg" data-reveal>
-        <span class="inline-block w-2 h-2 bg-[var(--color-leaf)] animate-pulse"></span>
-        14,629 supporters this winter — and counting.
+  <div class="relative max-w-3xl mx-auto flex flex-col items-center text-center gap-0">
+    <span class="chip" data-hero="chip">EST. 1823 • PARODY</span>
+    <p
+      class="font-pixel text-[10px] md:text-xs leading-relaxed tracking-[0.2em] text-[var(--color-leaf)] mt-4 max-w-sm text-pretty text-balance"
+      data-hero="tagline"
+    >
+      PETE: People for Ethical Treatment of Elves
+    </p>
+
+    <div class="relative flex justify-center shrink-0 mt-6" data-hero="sprite">
+      <div class="relative">
+        <PortraitToggle
+          class="relative w-32 md:w-40 lg:w-44"
+          ariaLabel="A tired 8-bit elf in a green tunic. Hover or click to cheer him up."
+          data-sprite-idle
+        >
+          <ElfHero />
+        </PortraitToggle>
       </div>
     </div>
 
-    <div class="relative flex justify-center md:justify-end" data-reveal>
-      <div class="relative">
-        <div class="absolute -inset-8 bg-[var(--color-moss)]/20 blur-3xl" aria-hidden="true"></div>
-        <ElfHero class="relative w-56 md:w-72 lg:w-80 drop-shadow-[8px_8px_0_rgba(0,0,0,0.5)]" data-sprite-idle ariaLabel="A tired 8-bit elf in a green tunic" />
-      </div>
+    <h1
+      class="font-pixel text-2xl md:text-4xl lg:text-5xl leading-[1.35] text-[var(--color-cream)] mt-6"
+      aria-label="Elves Deserve Better."
+      data-hero="title"
+    >
+      <span data-scramble class="inline-block whitespace-nowrap">Elves</span>
+      <span data-scramble class="inline-block whitespace-nowrap">Deserve</span>
+      <br />
+      <span data-scramble class="inline-block whitespace-nowrap text-[var(--color-gold)]">Better.</span>
+    </h1>
+    <p
+      class="font-retro text-xl md:text-2xl leading-snug text-[var(--color-cream)]/80 mt-5 max-w-xl mx-auto text-balance"
+      data-hero="copy"
+    >
+      For 1,200 winters, they've toiled in fluorescent-lit workshops under a sugar-based wage
+      system and a single, deeply narcissistic boss. It's time to listen.
+    </p>
+    <div class="flex flex-wrap justify-center gap-4 mt-7" data-hero="ctas">
+      <a href="#help" class="pixel-btn">Join The Movement</a>
+      <a href="#crisis" class="pixel-btn pixel-btn-ghost">Learn The Truth</a>
+    </div>
+    <div class="mt-6 flex items-center justify-center gap-3 text-[var(--color-cream)]/60 font-retro text-base" data-hero="supporters">
+      <span class="inline-block w-2 h-2 bg-[var(--color-leaf)] animate-pulse"></span>
+      14,629 supporters this winter, and counting.
     </div>
   </div>
 </section>

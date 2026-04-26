@@ -1,0 +1,192 @@
+---
+---
+<dialog
+  id="legal-modal"
+  class="legal-modal"
+  aria-labelledby="legal-modal-title"
+>
+  <div class="pixel-card p-8 md:p-10 relative max-w-lg w-[92vw]">
+    <button
+      type="button"
+      class="legal-close"
+      data-legal-close
+      aria-label="Close"
+    >×</button>
+
+    <div class="flex items-center gap-3 mb-4">
+      <span class="chip" data-legal-chip>LEGAL-ISH</span>
+      <span class="font-pixel text-[10px] tracking-widest text-[var(--color-cream)]/60">
+        DOC #<span data-legal-doc>000000</span>
+      </span>
+    </div>
+
+    <h3 id="legal-modal-title" class="font-pixel text-lg md:text-2xl leading-snug text-[var(--color-cream)]">
+      <span data-legal-headline>Legal disclosure</span>
+    </h3>
+
+    <p class="font-retro text-xl md:text-2xl text-[var(--color-cream)]/85 mt-4 leading-snug" data-legal-body>
+      This is a parody site. Nothing here is enforceable.
+    </p>
+
+    <div
+      class="mt-6 border-t-2 border-dashed border-[var(--color-moss)] pt-4 font-retro text-lg text-[var(--color-cream)]/75"
+      data-legal-details
+    ></div>
+
+    <div class="mt-8 flex flex-wrap gap-3 justify-end">
+      <button
+        type="button"
+        class="pixel-btn"
+        data-legal-close
+      >Understood</button>
+    </div>
+
+    <p class="font-pixel text-[9px] tracking-widest text-[var(--color-cream)]/40 mt-6 text-center">
+      PARODY • NOT LEGAL ADVICE • NOT ACTUALLY ANYTHING
+    </p>
+  </div>
+</dialog>
+
+<style>
+  .legal-modal {
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    border: none;
+    padding: 0;
+    background: transparent;
+    color: inherit;
+    width: max-content;
+    max-width: 92vw;
+    height: max-content;
+    max-height: 90vh;
+    overflow: visible;
+  }
+  .legal-modal::backdrop {
+    background: rgba(11, 21, 16, 0.85);
+    backdrop-filter: blur(4px);
+  }
+  .legal-modal[open] {
+    animation: legal-pop 0.28s cubic-bezier(0.2, 1.4, 0.4, 1);
+  }
+  @keyframes legal-pop {
+    0% { transform: translateY(16px) scale(0.92); opacity: 0; }
+    100% { transform: translateY(0) scale(1); opacity: 1; }
+  }
+  .legal-close {
+    position: absolute;
+    top: -14px;
+    right: -14px;
+    width: 36px;
+    height: 36px;
+    font-family: var(--font-pixel);
+    font-size: 18px;
+    line-height: 1;
+    color: var(--color-night);
+    background: var(--color-danger);
+    border: 4px solid var(--color-cream);
+    box-shadow: 4px 4px 0 0 var(--color-forest);
+    cursor: pointer;
+    transition: transform 0.1s ease;
+  }
+  .legal-close:hover {
+    transform: translate(-1px, -1px);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .legal-modal[open] { animation: none; }
+  }
+</style>
+
+<script>
+  type LegalKey = "privacy" | "cookie" | "press" | "email";
+
+  interface LegalContent {
+    chip: string;
+    headline: string;
+    body: string;
+    details: string;
+  }
+
+  const LEGAL: Record<LegalKey, LegalContent> = {
+    privacy: {
+      chip: "PRIVACY",
+      headline: "Privacy Policy (Also Fictional)",
+      body: "We track absolutely nothing. We can't. Our analytics vendor is a squirrel named Paul, and Paul cannot be subpoenaed.",
+      details:
+        "Data retention: zero weeks · Third-party sharing: only with Gilbert · Your rights: whatever you say, you win · GDPR compliance: vibes-based",
+    },
+    cookie: {
+      chip: "COOKIE POLICY",
+      headline: "Cookie Policy (Very Literal)",
+      body: "This site requires one (1) real cookie, placed on top of your monitor, refreshed every 30 days. Chocolate chip is preferred. Oatmeal raisin will be noted and judged.",
+      details:
+        "Session cookies: 1 physical · Tracking cookies: inspected by Gilbert nightly · Consent: implied the moment you started reading this · Opt-out: leave the cookie anyway",
+    },
+    press: {
+      chip: "PRESS KIT",
+      headline: "The press kit is inside a drawer.",
+      body: "An undisclosed drawer, in an undisclosed workshop. To request access, whisper your media outlet's name into the nearest mushroom circle between 2 and 4 AM local time.",
+      details:
+        "Logo package: embroidered on a handkerchief · Brand colors: the ones you're looking at · Interview requests: routed through a reindeer · Response time: 6–8 fiscal quarters",
+    },
+    email: {
+      chip: "BOUNCE",
+      headline: "That email doesn't exist.",
+      body: "hello@thisispete.org bounces directly into the void. It has never been configured, is never checked, and will never reply. We admire your commitment, though.",
+      details:
+        "Alternative channels: a firmly-worded letter to the North Pole HR department · Turnaround: allegedly responsive · Legal status: we are not, in fact, findable",
+    },
+  };
+
+  const dialog = document.getElementById("legal-modal") as HTMLDialogElement | null;
+  if (dialog) {
+    const chipEl = dialog.querySelector<HTMLElement>("[data-legal-chip]");
+    const headlineEl = dialog.querySelector<HTMLElement>("[data-legal-headline]");
+    const bodyEl = dialog.querySelector<HTMLElement>("[data-legal-body]");
+    const detailsEl = dialog.querySelector<HTMLElement>("[data-legal-details]");
+    const docEl = dialog.querySelector<HTMLElement>("[data-legal-doc]");
+
+    const openModal = (key: LegalKey) => {
+      const content = LEGAL[key];
+      if (!content) return;
+      if (chipEl) chipEl.textContent = content.chip;
+      if (headlineEl) headlineEl.textContent = content.headline;
+      if (bodyEl) bodyEl.textContent = content.body;
+      if (detailsEl) detailsEl.textContent = content.details;
+      if (docEl) docEl.textContent = Math.floor(Math.random() * 900000 + 100000).toString();
+
+      if (typeof dialog.showModal === "function") {
+        dialog.showModal();
+      } else {
+        dialog.setAttribute("open", "");
+      }
+    };
+
+    const closeModal = () => {
+      if (typeof dialog.close === "function") {
+        dialog.close();
+      } else {
+        dialog.removeAttribute("open");
+      }
+    };
+
+    document.querySelectorAll<HTMLAnchorElement>("[data-legal-trigger]").forEach((a) => {
+      a.addEventListener("click", (e) => {
+        e.preventDefault();
+        const key = a.dataset.legalKey as LegalKey | undefined;
+        if (key) openModal(key);
+      });
+    });
+
+    dialog.querySelectorAll<HTMLElement>("[data-legal-close]").forEach((el) => {
+      el.addEventListener("click", (e) => {
+        e.preventDefault();
+        closeModal();
+      });
+    });
+
+    dialog.addEventListener("click", (e) => {
+      if (e.target === dialog) closeModal();
+    });
+  }
+</script>

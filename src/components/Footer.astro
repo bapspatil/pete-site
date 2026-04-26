@@ -1,5 +1,6 @@
 ---
 import BapusahebPatil from "./sprites/BapusahebPatil.astro";
+import PortraitToggle from "./PortraitToggle.astro";
 ---
 <footer class="relative border-t-4 border-[var(--color-moss)] mt-16">
   <div class="max-w-6xl mx-auto px-6 py-14 grid gap-10 md:grid-cols-[1.3fr_1fr_1fr]">
@@ -21,7 +22,7 @@ import BapusahebPatil from "./sprites/BapusahebPatil.astro";
         <span class="font-pixel text-sm tracking-widest text-[var(--color-cream)]">PETE</span>
       </div>
       <p class="font-retro text-lg text-[var(--color-cream)]/70 mt-4 max-w-sm leading-snug">
-        People for Ethical Treatment of Elves. A satirical nonprofit parody. No elves — or humans — were
+        People for Ethical Treatment of Elves. A satirical nonprofit parody. No elves (or humans) were
         harmed in the making of this site.
       </p>
     </div>
@@ -39,27 +40,29 @@ import BapusahebPatil from "./sprites/BapusahebPatil.astro";
     <div>
       <div class="font-pixel text-[11px] text-[var(--color-gold)] mb-4">LEGAL-ISH</div>
       <ul class="font-retro text-lg text-[var(--color-cream)]/80 space-y-2">
-        <li><a href="#" class="hover:text-[var(--color-gold)]">Privacy Policy (Fictional)</a></li>
-        <li><a href="#" class="hover:text-[var(--color-gold)]">Cookie Policy (Literal)</a></li>
-        <li><a href="#" class="hover:text-[var(--color-gold)]">Press Kit</a></li>
-        <li><a href="mailto:hello@thisispete.org" class="hover:text-[var(--color-gold)]">hello@thisispete.org</a></li>
+        <li><a href="#" class="hover:text-[var(--color-gold)]" data-legal-trigger data-legal-key="privacy">Privacy Policy (Fictional)</a></li>
+        <li><a href="#" class="hover:text-[var(--color-gold)]" data-legal-trigger data-legal-key="cookie">Cookie Policy (Literal)</a></li>
+        <li><a href="#" class="hover:text-[var(--color-gold)]" data-legal-trigger data-legal-key="press">Press Kit</a></li>
+        <li><a href="mailto:hello@thisispete.org" class="hover:text-[var(--color-gold)]" data-legal-trigger data-legal-key="email">hello@thisispete.org</a></li>
       </ul>
     </div>
   </div>
 
   <div class="border-t-2 border-dashed border-[var(--color-moss)]">
     <div class="max-w-6xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-6">
-      <a
-        href="https://www.bapspatil.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="flex items-center gap-4 group"
-      >
-        <BapusahebPatil
-          class="w-14 md:w-16 drop-shadow-[4px_4px_0_rgba(0,0,0,0.5)] group-hover:-translate-y-0.5 transition-transform"
-          ariaLabel="An 8-bit pixel portrait of Bapusaheb Patil"
-        />
-        <div class="text-left">
+      <div class="flex items-center gap-4">
+        <PortraitToggle
+          class="w-14 md:w-16"
+          ariaLabel="8-bit portrait of Bapusaheb Patil. Hover or click to make him smile."
+        >
+          <BapusahebPatil />
+        </PortraitToggle>
+        <a
+          href="https://www.bapspatil.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-left group"
+        >
           <div class="font-pixel text-[9px] tracking-widest text-[var(--color-leaf)] mb-1">
             BUILT BY · BAPSPATIL.COM
           </div>
@@ -69,8 +72,8 @@ import BapusahebPatil from "./sprites/BapusahebPatil.astro";
           <div class="font-retro text-base text-[var(--color-cream)]/70">
             AI Design Engineer &nbsp;·&nbsp; &copy; 2026
           </div>
-        </div>
-      </a>
+        </a>
+      </div>
       <p class="font-pixel text-[10px] tracking-widest text-[var(--color-cream)]/50 text-center md:text-right">
         PARODY SITE • NOT AFFILIATED WITH ANY NORTHERN OPERATION
       </p>

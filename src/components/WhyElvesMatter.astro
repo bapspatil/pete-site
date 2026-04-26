@@ -1,5 +1,6 @@
 ---
 import ElfScholar from "./sprites/ElfScholar.astro";
+import PortraitToggle from "./PortraitToggle.astro";
 
 const pillars = [
   {
@@ -16,20 +17,26 @@ const pillars = [
   },
 ];
 ---
-<section id="why" class="relative py-24 md:py-32 px-6 bg-gradient-to-b from-transparent via-[var(--color-forest)]/40 to-transparent">
+<section id="why" class="relative py-24 md:py-32 px-6">
   <div class="max-w-6xl mx-auto">
     <div class="grid md:grid-cols-[1fr_2fr] gap-10 items-end mb-14">
       <div class="flex justify-center md:justify-start" data-reveal>
-        <ElfScholar class="w-48 md:w-60 drop-shadow-[6px_6px_0_rgba(0,0,0,0.5)]" data-sprite-idle ariaLabel="A scholarly 8-bit elf with a crown and book" />
+        <PortraitToggle
+          class="w-48 md:w-60"
+          ariaLabel="A scholarly 8-bit elf with a crown and book. Hover or click to make him smile."
+          data-sprite-idle
+        >
+          <ElfScholar />
+        </PortraitToggle>
       </div>
       <div>
-        <div class="flex items-center gap-4 mb-4" data-reveal>
+        <div class="flex items-center gap-4 mb-6" data-reveal>
           <span class="inline-block w-12 h-[3px] bg-[var(--color-gold)]"></span>
           <span class="font-pixel text-xs tracking-widest text-[var(--color-gold)]">WHY ELVES MATTER</span>
         </div>
         <h2 class="font-pixel text-2xl md:text-4xl leading-snug text-[var(--color-cream)]" data-reveal>
-          They built your childhood.<br />
-          <span class="text-[var(--color-leaf)]">Now they need ours.</span>
+          <span data-scramble>They built your childhood.</span><br />
+          <span data-scramble class="text-[var(--color-leaf)]">Now they need ours.</span>
         </h2>
       </div>
     </div>

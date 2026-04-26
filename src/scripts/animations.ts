@@ -1,21 +1,58 @@
 import { gsap } from "gsap";
+import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
+
+gsap.registerPlugin(ScrambleTextPlugin);
 
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-function animateHero() {
-  if (prefersReducedMotion) return;
+function animateScrambles() {
+  const scrambles = document.querySelectorAll<HTMLElement>("[data-scramble]");
+  if (scrambles.length === 0) return;
 
-  const heroChars = document.querySelectorAll<HTMLElement>("[data-reveal-char] .word > span");
-  if (heroChars.length > 0) {
-    gsap.to(heroChars, {
-      opacity: 1,
-      y: 0,
-      duration: 0.55,
-      ease: "back.out(1.6)",
-      stagger: 0.035,
-      delay: 0.15,
+  if (prefersReducedMotion) {
+    scrambles.forEach((el) => {
+      const finalText = el.dataset.scramble || el.textContent || "";
+      el.textContent = finalText;
+      el.style.visibility = "visible";
     });
+    return;
   }
+
+  scrambles.forEach((el) => {
+    if (!el.dataset.scramble) {
+      el.dataset.scramble = el.textContent ?? "";
+    }
+  });
+
+  const scrambleObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target as HTMLElement;
+        scrambleObserver.unobserve(el);
+        const finalText = el.dataset.scramble ?? "";
+        gsap.to(el, {
+          duration: 1.0,
+          ease: "none",
+          onStart: () => {
+            el.style.visibility = "visible";
+          },
+          scrambleText: {
+            text: finalText,
+            chars: "upperCase",
+            speed: 0.55,
+            revealDelay: 0.25,
+          },
+        });
+      });
+    },
+    { threshold: 0.2, rootMargin: "0px 0px -5% 0px" }
+  );
+
+  scrambles.forEach((el) => {
+    if (el.closest("#top")) return;
+    scrambleObserver.observe(el);
+  });
 }
 
 function formatCounter(val: number, decimals: number, suffix: string): string {
@@ -44,8 +81,99 @@ function tweenCounter(el: HTMLElement) {
   });
 }
 
+function choreographHero() {
+  const hero = document.querySelector<HTMLElement>("#top");
+  if (!hero) return;
+
+  const navRoot = document.querySelector<HTMLElement>("[data-nav-root]");
+  const navItems = document.querySelectorAll<HTMLElement>("[data-nav-item]");
+  const chip = hero.querySelector<HTMLElement>('[data-hero="chip"]');
+  const tagline = hero.querySelector<HTMLElement>('[data-hero="tagline"]');
+  const title = hero.querySelectorAll<HTMLElement>('[data-hero="title"] [data-scramble]');
+  const copy = hero.querySelector<HTMLElement>('[data-hero="copy"]');
+  const ctas = hero.querySelector<HTMLElement>('[data-hero="ctas"]');
+  const supporters = hero.querySelector<HTMLElement>('[data-hero="supporters"]');
+  const sprite = hero.querySelector<HTMLElement>('[data-hero="sprite"]');
+
+  if (prefersReducedMotion) {
+    [chip, tagline, copy, ctas, supporters, sprite, navRoot].forEach((el) => {
+      if (!el) return;
+      el.style.opacity = "1";
+      el.style.transform = "none";
+    });
+    navItems.forEach((el) => {
+      el.style.opacity = "1";
+      el.style.transform = "none";
+    });
+    return;
+  }
+
+  const tl = gsap.timeline({ defaults: { ease: "power3.out", duration: 0.55 } });
+
+  if (navRoot) {
+    tl.fromTo(navRoot, { y: "-100%" }, { y: "0%", duration: 0.45, ease: "power2.out" }, 0);
+  }
+  if (navItems.length > 0) {
+    tl.fromTo(
+      navItems,
+      { opacity: 0, y: -8 },
+      { opacity: 1, y: 0, duration: 0.3, stagger: 0.05, ease: "power2.out" },
+      0.1
+    );
+  }
+
+  if (chip) {
+    tl.fromTo(chip, { opacity: 0, y: 20 }, { opacity: 1, y: 0 }, 0.1);
+  }
+  if (tagline) {
+    tl.fromTo(tagline, { opacity: 0, y: 16 }, { opacity: 1, y: 0 }, "-=0.25");
+  }
+  title.forEach((t, i) => {
+    const finalText = t.dataset.scramble ?? "";
+    tl.to(
+      t,
+      {
+        duration: 1.0,
+        ease: "none",
+        onStart: () => {
+          t.style.visibility = "visible";
+        },
+        scrambleText: {
+          text: finalText,
+          chars: "upperCase",
+          speed: 0.55,
+          revealDelay: 0.2,
+        },
+      },
+      i === 0 ? "-=0.15" : "-=0.7"
+    );
+  });
+  if (copy) {
+    tl.fromTo(copy, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.7 }, "-=0.4");
+  }
+  if (ctas) {
+    tl.fromTo(
+      ctas,
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 0.6, ease: "back.out(1.5)" },
+      "-=0.35"
+    );
+  }
+  if (supporters) {
+    tl.fromTo(supporters, { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.5 }, "-=0.3");
+  }
+  if (sprite) {
+    tl.fromTo(
+      sprite,
+      { opacity: 0, scale: 0.82, y: 24 },
+      { opacity: 1, scale: 1, y: 0, duration: 0.9, ease: "back.out(1.3)" },
+      0.25
+    );
+  }
+}
+
 function setupRevealObserver() {
-  const revealEls = document.querySelectorAll<HTMLElement>("[data-reveal]");
+  const revealEls = document.querySelectorAll<HTMLElement>("[data-reveal]:not([data-hero])");
   if (revealEls.length === 0) return;
 
   if (prefersReducedMotion) {
@@ -99,7 +227,8 @@ function setupSpriteIdles() {
 }
 
 function init() {
-  animateHero();
+  animateScrambles();
+  choreographHero();
   setupRevealObserver();
   setupSpriteIdles();
 }

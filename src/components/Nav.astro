@@ -1,8 +1,11 @@
 ---
 ---
-<header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-[rgba(11,21,16,0.7)] border-b-2 border-[var(--color-moss)]">
+<header
+  class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-[rgba(11,21,16,0.7)] border-b-2 border-[var(--color-moss)]"
+  data-nav-root
+>
   <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-    <a href="#top" class="flex items-center gap-3 group">
+    <a href="#top" class="flex items-center gap-3 group" data-nav-item>
       <span class="inline-block w-8 h-8 bg-[var(--color-gold)] border-2 border-[var(--color-cream)] pixel-border-sm">
         <svg viewBox="0 0 8 8" class="w-full h-full" shape-rendering="crispEdges" aria-hidden="true">
           <rect x="3" y="0" width="2" height="1" fill="#c43a2a" />
@@ -19,16 +22,17 @@
       <span class="font-pixel text-sm tracking-widest text-[var(--color-cream)]">PETE</span>
     </a>
     <ul class="hidden md:flex items-center gap-7 font-retro text-xl text-[var(--color-cream)]">
-      <li><a href="#crisis" class="hover:text-[var(--color-gold)] transition">The Crisis</a></li>
-      <li><a href="#why" class="hover:text-[var(--color-gold)] transition">Why It Matters</a></li>
-      <li><a href="#help" class="hover:text-[var(--color-gold)] transition">Take Action</a></li>
-      <li><a href="#voices" class="hover:text-[var(--color-gold)] transition">Voices</a></li>
+      <li data-nav-item><a href="#crisis" class="hover:text-[var(--color-gold)] transition">The Crisis</a></li>
+      <li data-nav-item><a href="#why" class="hover:text-[var(--color-gold)] transition">Why It Matters</a></li>
+      <li data-nav-item><a href="#help" class="hover:text-[var(--color-gold)] transition">Take Action</a></li>
+      <li data-nav-item><a href="#voices" class="hover:text-[var(--color-gold)] transition">Voices</a></li>
     </ul>
     <a
       href="#help"
       class="pixel-btn !py-2 !px-4 text-[10px]"
       data-donate-trigger
       data-donate-label="Donate"
+      data-nav-item
     >Donate</a>
   </nav>
 </header>

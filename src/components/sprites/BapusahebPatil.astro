@@ -4,7 +4,7 @@ interface Props {
   ariaLabel?: string;
 }
 const { class: className = "", ariaLabel } = Astro.props;
-// 20x24 — pixel-art portrait of Bapusaheb Patil.
+// 20x24: pixel-art portrait of Bapusaheb Patil.
 // Short black hair, black rectangular glasses, warm brown skin, light stubble,
 // white t-shirt with navy collar ring.
 ---
@@ -52,9 +52,15 @@ const { class: className = "", ariaLabel } = Astro.props;
   <rect x="3" y="8" width="1" height="2" fill="#8a5e3c" />
   <rect x="16" y="8" width="1" height="2" fill="#8a5e3c" />
 
-  <!-- eyebrows peeking above glasses -->
-  <rect x="5" y="7" width="3" height="1" fill="#14261c" />
-  <rect x="12" y="7" width="3" height="1" fill="#14261c" />
+  <!-- eyebrows: rest (row 7) and raised (row 6) -->
+  <g data-brows="rest">
+    <rect x="5" y="7" width="3" height="1" fill="#14261c" />
+    <rect x="12" y="7" width="3" height="1" fill="#14261c" />
+  </g>
+  <g data-brows="raised">
+    <rect x="5" y="6" width="3" height="1" fill="#14261c" />
+    <rect x="12" y="6" width="3" height="1" fill="#14261c" />
+  </g>
 
   <!-- glasses top rims -->
   <rect x="4" y="8" width="5" height="1" fill="#0b1510" />
@@ -78,16 +84,28 @@ const { class: className = "", ariaLabel } = Astro.props;
   <rect x="10" y="10" width="1" height="1" fill="#8a5e3c" />
   <rect x="9" y="11" width="2" height="1" fill="#8a5e3c" />
 
-  <!-- closed-mouth smile -->
-  <rect x="8" y="12" width="4" height="1" fill="#6b4a2a" />
+  <!-- full short beard: mustache + cheek/jaw/chin coverage -->
+  <rect x="7" y="11" width="6" height="1" fill="#3a2a1e" />
+  <rect x="5" y="12" width="3" height="1" fill="#3a2a1e" />
+  <rect x="12" y="12" width="4" height="1" fill="#3a2a1e" />
+  <rect x="5" y="13" width="10" height="1" fill="#3a2a1e" />
+  <rect x="5" y="14" width="10" height="1" fill="#3a2a1e" />
+  <rect x="6" y="15" width="8" height="1" fill="#3a2a1e" />
+  <!-- beard edge highlights for texture -->
+  <rect x="4" y="13" width="1" height="1" fill="#5a4030" />
+  <rect x="15" y="13" width="1" height="1" fill="#5a4030" />
+  <rect x="5" y="14" width="1" height="1" fill="#5a4030" />
+  <rect x="14" y="14" width="1" height="1" fill="#5a4030" />
 
-  <!-- stubble -->
-  <rect x="5" y="13" width="2" height="1" fill="#4a3824" />
-  <rect x="13" y="13" width="2" height="1" fill="#4a3824" />
-  <rect x="6" y="14" width="2" height="1" fill="#4a3824" />
-  <rect x="12" y="14" width="2" height="1" fill="#4a3824" />
-  <rect x="7" y="15" width="1" height="1" fill="#4a3824" />
-  <rect x="12" y="15" width="1" height="1" fill="#4a3824" />
+  <!-- mouth: rest (neutral) and smile (teeth), toggled via PortraitToggle -->
+  <g data-mouth="rest">
+    <rect x="8" y="12" width="4" height="1" fill="#1e120c" />
+  </g>
+  <g data-mouth="smile">
+    <rect x="7" y="12" width="1" height="1" fill="#14261c" />
+    <rect x="8" y="12" width="4" height="1" fill="#f4e8cf" />
+    <rect x="12" y="12" width="1" height="1" fill="#14261c" />
+  </g>
 
   <!-- neck -->
   <rect x="7" y="16" width="6" height="1" fill="#8a5e3c" />

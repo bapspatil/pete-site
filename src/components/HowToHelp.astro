@@ -1,5 +1,6 @@
 ---
 import ElfLiberated from "./sprites/ElfLiberated.astro";
+import PortraitToggle from "./PortraitToggle.astro";
 
 const actions = [
   {
@@ -36,20 +37,26 @@ const actions = [
   <div class="max-w-6xl mx-auto">
     <div class="grid md:grid-cols-[2fr_1fr] gap-10 items-end mb-14">
       <div>
-        <div class="flex items-center gap-4 mb-4" data-reveal>
+        <div class="flex items-center gap-4 mb-6" data-reveal>
           <span class="inline-block w-12 h-[3px] bg-[var(--color-leaf)]"></span>
           <span class="font-pixel text-xs tracking-widest text-[var(--color-leaf)]">TAKE ACTION</span>
         </div>
         <h2 class="font-pixel text-2xl md:text-4xl leading-snug text-[var(--color-cream)]" data-reveal>
-          Four Ways To<br />
-          <span class="text-[var(--color-gold)]">Be On The Right Side</span> Of History.
+          <span data-scramble>Four Ways To</span><br />
+          <span data-scramble class="text-[var(--color-gold)]">Be On The Right Side</span> <span data-scramble>Of History.</span>
         </h2>
         <p class="font-retro text-xl md:text-2xl text-[var(--color-cream)]/80 mt-6 max-w-xl" data-reveal>
           Every small action matters. Except leaving milk out. That's literally part of the problem.
         </p>
       </div>
       <div class="flex justify-center md:justify-end" data-reveal>
-        <ElfLiberated class="w-48 md:w-56 drop-shadow-[6px_6px_0_rgba(0,0,0,0.5)]" data-sprite-idle ariaLabel="An 8-bit elf raising a protest banner" />
+        <PortraitToggle
+          class="w-48 md:w-56"
+          ariaLabel="An 8-bit elf raising a protest banner. Hover or click to make him smile."
+          data-sprite-idle
+        >
+          <ElfLiberated />
+        </PortraitToggle>
       </div>
     </div>
 
@@ -74,8 +81,8 @@ const actions = [
 
     <div class="mt-16 pixel-card p-8 md:p-12 text-center" data-reveal>
       <h3 class="font-pixel text-lg md:text-2xl leading-snug text-[var(--color-cream)]">
-        Donate <span class="text-[var(--color-gold)]">one cookie</span>.<br />
-        Save <span class="text-[var(--color-leaf)]">an entire workshop</span>.
+        <span data-scramble>Donate</span> <span data-scramble class="text-[var(--color-gold)]">one cookie</span><span data-scramble>.</span><br />
+        <span data-scramble>Save</span> <span data-scramble class="text-[var(--color-leaf)]">an entire workshop</span><span data-scramble>.</span>
       </h3>
       <p class="font-retro text-xl text-[var(--color-cream)]/80 mt-4 max-w-xl mx-auto">
         100% of all donations go directly to elf sabbatical funds, mushroom-circle restoration, and a

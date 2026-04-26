@@ -4,7 +4,7 @@ interface Props {
   ariaLabel?: string;
 }
 const { class: className = "", ariaLabel } = Astro.props;
-// 20x28 grid — front-facing sad elf with green tunic, pointy red hat, tiny boots
+// 20x28 grid: front-facing sad elf with green tunic, pointy red hat, tiny boots
 ---
 <svg
   viewBox="0 0 20 28"
@@ -31,18 +31,42 @@ const { class: className = "", ariaLabel } = Astro.props;
   <rect x="15" y="8" width="1" height="2" fill="#f3d1a6" />
   <rect x="3" y="9" width="1" height="1" fill="#f3d1a6" />
   <rect x="16" y="9" width="1" height="1" fill="#f3d1a6" />
-  <!-- sad eyes -->
-  <rect x="7" y="8" width="1" height="1" fill="#14261c" />
-  <rect x="12" y="8" width="1" height="1" fill="#14261c" />
   <!-- eye bags -->
   <rect x="6" y="9" width="3" height="1" fill="#c79a74" />
   <rect x="11" y="9" width="3" height="1" fill="#c79a74" />
   <!-- nose -->
   <rect x="9" y="9" width="2" height="1" fill="#e0b389" />
-  <!-- mouth (frown) -->
-  <rect x="8" y="10" width="4" height="1" fill="#14261c" />
-  <rect x="7" y="11" width="1" height="1" fill="#14261c" />
-  <rect x="12" y="11" width="1" height="1" fill="#14261c" />
+  <!-- somber brow -->
+  <rect x="7" y="7" width="1" height="1" fill="#6b4a2a" />
+  <rect x="12" y="7" width="1" height="1" fill="#6b4a2a" />
+  <!-- REST: sad open eyes, tear, frown. He is overworked and miserable. -->
+  <g data-pose="rest">
+    <rect x="7" y="8" width="1" height="1" fill="#14261c" />
+    <rect x="12" y="8" width="1" height="1" fill="#14261c" />
+    <rect x="7" y="10" width="1" height="1" fill="#6dc1d9" />
+    <rect x="8" y="10" width="4" height="1" fill="#14261c" />
+    <rect x="7" y="11" width="1" height="1" fill="#14261c" />
+    <rect x="12" y="11" width="1" height="1" fill="#14261c" />
+  </g>
+  <!-- ACTIVE: eyes scrunch into happy curves, blush appears, wide grin. Heart floats up. -->
+  <g data-pose="active">
+    <!-- closed smiling eyes with lash-lines -->
+    <rect x="6" y="8" width="3" height="1" fill="#14261c" />
+    <rect x="11" y="8" width="3" height="1" fill="#14261c" />
+    <rect x="5" y="9" width="1" height="1" fill="#14261c" />
+    <rect x="14" y="9" width="1" height="1" fill="#14261c" />
+    <!-- rosy blush over eye-bags -->
+    <rect x="6" y="9" width="3" height="1" fill="#e89b8b" />
+    <rect x="11" y="9" width="3" height="1" fill="#e89b8b" />
+    <!-- wide grin -->
+    <rect x="7" y="10" width="6" height="1" fill="#14261c" />
+    <!-- heart floats above head -->
+    <rect x="15" y="0" width="1" height="1" fill="#d44b3a" />
+    <rect x="17" y="0" width="1" height="1" fill="#d44b3a" />
+    <rect x="14" y="1" width="4" height="1" fill="#d44b3a" />
+    <rect x="15" y="2" width="3" height="1" fill="#d44b3a" />
+    <rect x="16" y="3" width="1" height="1" fill="#d44b3a" />
+  </g>
   <!-- neck -->
   <rect x="8" y="11" width="4" height="1" fill="#f3d1a6" />
   <!-- green tunic -->
@@ -61,8 +85,6 @@ const { class: className = "", ariaLabel } = Astro.props;
   <rect x="16" y="13" width="2" height="4" fill="#2f5c44" />
   <rect x="2" y="17" width="2" height="1" fill="#f3d1a6" />
   <rect x="16" y="17" width="2" height="1" fill="#f3d1a6" />
-  <!-- tear drop -->
-  <rect x="7" y="10" width="1" height="1" fill="#6dc1d9" />
   <!-- legs -->
   <rect x="6" y="19" width="3" height="5" fill="#8b5a3c" />
   <rect x="11" y="19" width="3" height="5" fill="#8b5a3c" />

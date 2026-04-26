@@ -1,0 +1,31 @@
+---
+const { class: className = "", ariaLabel = "Pixel illustration. Click to smile.", ...attrs } = Astro.props;
+---
+<span
+  class={`portrait-toggle ${className}`}
+  tabindex="0"
+  role="button"
+  aria-pressed="false"
+  aria-label={ariaLabel}
+  data-portrait-toggle
+  {...attrs}
+>
+  <slot />
+</span>
+
+<script>
+  const toggles = document.querySelectorAll<HTMLElement>("[data-portrait-toggle]");
+  toggles.forEach((el) => {
+    const toggle = () => {
+      const on = el.classList.toggle("is-smiling");
+      el.setAttribute("aria-pressed", on ? "true" : "false");
+    };
+    el.addEventListener("click", toggle);
+    el.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        toggle();
+      }
+    });
+  });
+</script>

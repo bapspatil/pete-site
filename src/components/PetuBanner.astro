@@ -1,20 +1,23 @@
 ---
 import UnicornPartner from "./sprites/UnicornPartner.astro";
 import DavidGumpel from "./sprites/DavidGumpel.astro";
+import PortraitToggle from "./PortraitToggle.astro";
 ---
 <section id="petu" class="relative px-6 pb-16 md:pb-24">
   <div class="max-w-6xl mx-auto">
     <div
       class="pixel-card p-8 md:p-10 relative overflow-hidden"
-      style="background: linear-gradient(180deg, #1a1220 0%, #0f0a17 100%); border-color: #d9b3d9;"
+      style="background: #1a1220; border-color: #d9b3d9;"
       data-reveal
     >
       <div class="grid gap-8 md:grid-cols-[auto_1fr_auto] items-center">
         <div class="flex justify-center md:justify-start">
-          <UnicornPartner
-            class="w-40 md:w-48 drop-shadow-[6px_6px_0_rgba(0,0,0,0.5)]"
-            ariaLabel="An 8-bit pastel unicorn with a rainbow mane"
-          />
+          <PortraitToggle
+            class="w-40 md:w-48"
+            ariaLabel="An 8-bit pastel unicorn with a rainbow mane. Hover or click for extra sparkle."
+          >
+            <UnicornPartner />
+          </PortraitToggle>
         </div>
 
         <div class="text-center md:text-left">
@@ -26,13 +29,13 @@ import DavidGumpel from "./sprites/DavidGumpel.astro";
             <span class="inline-block w-8 h-[3px]" style="background: #d9b3d9;"></span>
           </div>
           <h3 class="font-pixel text-xl md:text-3xl leading-snug text-[var(--color-cream)]">
-            PETE <span style="color: #d9b3d9;">×</span>
-            <span style="color: #f2c94c;">PETU</span>
+            <span data-scramble>PETE</span> <span data-scramble style="color: #d9b3d9;">×</span>
+            <span data-scramble style="color: #f2c94c;">PETU</span>
           </h3>
           <p class="font-retro text-xl md:text-2xl text-[var(--color-cream)]/85 mt-3 max-w-xl">
             We've joined forces with our horned counterparts at
-            <strong style="color: #d9b3d9;">PETU</strong> —
-            People for Ethical Treatment of Unicorns — because elves deserve unions,
+            <strong style="color: #d9b3d9;">PETU</strong>,
+            the People for Ethical Treatment of Unicorns. Because elves deserve unions,
             and unicorns deserve more than glitter-based compensation.
           </p>
           <p class="font-retro text-lg text-[var(--color-cream)]/70 mt-3 max-w-xl">
@@ -57,10 +60,12 @@ import DavidGumpel from "./sprites/DavidGumpel.astro";
         class="mt-8 pt-6 border-t-2 border-dashed flex items-center gap-5 justify-center md:justify-start"
         style="border-color: rgba(217, 179, 217, 0.45);"
       >
-        <DavidGumpel
-          class="w-16 md:w-20 drop-shadow-[4px_4px_0_rgba(0,0,0,0.5)]"
-          ariaLabel="An 8-bit pixel portrait of David Gumpel, founder of PETU"
-        />
+        <PortraitToggle
+          class="w-16 md:w-20"
+          ariaLabel="8-bit portrait of David Gumpel. Hover or click to make him smile."
+        >
+          <DavidGumpel />
+        </PortraitToggle>
         <div>
           <div class="font-pixel text-[10px] tracking-widest mb-1" style="color: #d9b3d9;">
             FOUNDER · PETU
@@ -69,7 +74,7 @@ import DavidGumpel from "./sprites/DavidGumpel.astro";
             David Gumpel
           </div>
           <p class="font-retro text-lg text-[var(--color-cream)]/70 mt-1 max-w-sm">
-            Horn-rights advocate. Former glitter auditor. Currently unreachable — on sabbatical with a unicorn.
+            Horn-rights advocate. Former glitter auditor. Currently unreachable. On sabbatical with a unicorn.
           </p>
         </div>
       </div>

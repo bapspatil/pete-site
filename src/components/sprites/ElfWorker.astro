@@ -4,7 +4,7 @@ interface Props {
   ariaLabel?: string;
 }
 const { class: className = "", ariaLabel } = Astro.props;
-// 24x24 — side profile hunched over a workbench with tiny hammer
+// 24x24: side profile hunched over a workbench with tiny hammer
 ---
 <svg
   viewBox="0 0 24 24"
@@ -22,9 +22,16 @@ const { class: className = "", ariaLabel } = Astro.props;
   <!-- hunched face (side) -->
   <rect x="3" y="6" width="6" height="1" fill="#f3d1a6" />
   <rect x="3" y="7" width="6" height="1" fill="#f3d1a6" />
-  <rect x="8" y="7" width="1" height="1" fill="#14261c" />
   <!-- pointy ear side -->
   <rect x="2" y="7" width="1" height="1" fill="#f3d1a6" />
+  <!-- REST: one open eye, still awake (barely) -->
+  <g data-pose="rest">
+    <rect x="8" y="7" width="1" height="1" fill="#14261c" />
+  </g>
+  <!-- ACTIVE: he nods off. Eye closes. The existing Z's say the rest. -->
+  <g data-pose="active">
+    <rect x="7" y="7" width="2" height="1" fill="#14261c" />
+  </g>
   <!-- hunched back tunic -->
   <rect x="2" y="8" width="8" height="1" fill="#2f5c44" />
   <rect x="1" y="9" width="9" height="1" fill="#2f5c44" />
@@ -58,11 +65,15 @@ const { class: className = "", ariaLabel } = Astro.props;
   <rect x="18" y="14" width="3" height="3" fill="#f2c94c" />
   <rect x="19" y="14" width="1" height="1" fill="#c43a2a" />
   <rect x="21" y="15" width="1" height="1" fill="#f2c94c" />
-  <!-- z's for exhaustion -->
-  <rect x="13" y="2" width="2" height="1" fill="#f4e8cf" />
-  <rect x="14" y="3" width="1" height="1" fill="#f4e8cf" />
-  <rect x="13" y="4" width="2" height="1" fill="#f4e8cf" />
-  <rect x="16" y="5" width="2" height="1" fill="#f4e8cf" />
-  <rect x="17" y="6" width="1" height="1" fill="#f4e8cf" />
-  <rect x="16" y="7" width="2" height="1" fill="#f4e8cf" />
+  <!-- z's for exhaustion: two small Z sprites that drift upward on a loop -->
+  <g class="zzz" data-zzz="1" style="transform-origin: 14px 3px;">
+    <rect x="13" y="2" width="2" height="1" fill="#f4e8cf" />
+    <rect x="14" y="3" width="1" height="1" fill="#f4e8cf" />
+    <rect x="13" y="4" width="2" height="1" fill="#f4e8cf" />
+  </g>
+  <g class="zzz" data-zzz="2" style="transform-origin: 17px 6px;">
+    <rect x="16" y="5" width="2" height="1" fill="#f4e8cf" />
+    <rect x="17" y="6" width="1" height="1" fill="#f4e8cf" />
+    <rect x="16" y="7" width="2" height="1" fill="#f4e8cf" />
+  </g>
 </svg>

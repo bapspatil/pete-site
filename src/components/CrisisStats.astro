@@ -1,5 +1,6 @@
 ---
 import ElfWorker from "./sprites/ElfWorker.astro";
+import PortraitToggle from "./PortraitToggle.astro";
 
 const stats = [
   { value: 87, suffix: "%", label: "of elves work more than 300 nights per year without scheduled breaks" },
@@ -10,16 +11,16 @@ const stats = [
 ---
 <section id="crisis" class="relative py-24 md:py-32 px-6">
   <div class="max-w-6xl mx-auto">
-    <div class="flex items-center gap-4 mb-4" data-reveal>
+    <div class="flex items-center gap-4 mb-6" data-reveal>
       <span class="inline-block w-12 h-[3px] bg-[var(--color-danger)]"></span>
       <span class="font-pixel text-xs tracking-widest text-[var(--color-danger)]">THE CRISIS</span>
     </div>
     <h2 class="font-pixel text-2xl md:text-4xl leading-snug text-[var(--color-cream)] max-w-3xl" data-reveal>
-      The Numbers <span class="text-[var(--color-danger)]">Don't Lie</span>.<br />
-      <span class="text-[var(--color-cream)]/70">(The Elves Would, Under Duress.)</span>
+      <span data-scramble>The Numbers</span> <span data-scramble class="text-[var(--color-danger)]">Don't Lie</span><span data-scramble>.</span><br />
+      <span data-scramble class="text-[var(--color-cream)]/70">(The Elves Would, Under Duress.)</span>
     </h2>
     <p class="font-retro text-xl md:text-2xl text-[var(--color-cream)]/80 mt-6 max-w-2xl" data-reveal>
-      Through tireless field research — and several very confused interviews conducted in a reindeer stable —
+      Through tireless field research (and several very confused interviews conducted in a reindeer stable),
       PETE has uncovered the following, definitely-real statistics.
     </p>
 
@@ -42,17 +43,23 @@ const stats = [
 
     <div class="mt-20 grid md:grid-cols-[1fr_1.2fr] gap-10 items-center">
       <div class="flex justify-center" data-reveal>
-        <ElfWorker class="w-64 md:w-80 drop-shadow-[6px_6px_0_rgba(0,0,0,0.5)]" data-sprite-idle ariaLabel="A hunched 8-bit elf hammering at a workbench" />
+        <PortraitToggle
+          class="w-64 md:w-80"
+          ariaLabel="A hunched 8-bit elf hammering at a workbench. Hover or click to make him smile."
+          data-sprite-idle
+        >
+          <ElfWorker />
+        </PortraitToggle>
       </div>
       <div>
         <h3 class="font-pixel text-lg md:text-xl leading-snug text-[var(--color-cream)]" data-reveal>
-          A day in the life <span class="text-[var(--color-gold)]">of Tinsel Cogswaddle</span>
+          <span data-scramble>A day in the life</span> <span data-scramble class="text-[var(--color-gold)]">of Tinsel Cogswaddle</span>
         </h3>
         <p class="font-retro text-xl text-[var(--color-cream)]/80 mt-4 leading-snug" data-reveal>
-          04:00 — wakes up in a communal hay bunk he shares with six cousins.<br />
-          04:07 — begins stitching button eyes onto 2,400 teddy bears.<br />
-          12:00 — 11-minute lunch of one (1) sugar cookie.<br />
-          22:30 — goes to bed covered in glitter he will never, ever get out.<br />
+          04:00 · wakes up in a communal hay bunk he shares with six cousins.<br />
+          04:07 · begins stitching button eyes onto 2,400 teddy bears.<br />
+          12:00 · 11-minute lunch of one (1) sugar cookie.<br />
+          22:30 · goes to bed covered in glitter he will never, ever get out.<br />
           <span class="text-[var(--color-gold)]">Tinsel is 847 years old. He has had one vacation.</span>
         </p>
       </div>
