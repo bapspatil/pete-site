@@ -1,43 +1,61 @@
-# Astro Starter Kit: Minimal
+# PETE: People for Ethical Treatment of Elves
+
+The official website for the world's only nonprofit fighting for the workforce nobody asked about, but everyone owes their childhood to.
+
+Yes, this is a parody. No, the elves cannot be reached for comment. They are very busy.
+
+## What is this
+
+A satirical landing page for PETE, a fictional advocacy group demanding basic dignity for the elves who run the global toy industrial complex. Think union breaks, ergonomic workbenches, dental, and at least one (1) mandated nap per millennium.
+
+We have:
+
+- A hero section that probably violates several copyrights in spirit
+- Crisis statistics that are made up but emotionally accurate
+- Testimonials from elves who definitely exist
+- A donate button that opens a modal, not your wallet
+- An 8-bit aesthetic, because pixel guilt hits different
+- A proud partnership with PETU (People for Ethical Treatment of Unicorns), our sister org and frequent rivals at the annual mythical creatures gala
+
+## Running it locally
+
+This is an Astro site. The usual incantations apply.
 
 ```sh
-bun create astro@latest -- --template minimal
+bun install
+bun dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Then visit the address your terminal politely prints out. Do not pet the elves through the screen. They can sense it.
 
-## 🚀 Project Structure
+| Command         | What happens                                              |
+| :-------------- | :-------------------------------------------------------- |
+| `bun install`   | Installs the things                                       |
+| `bun dev`       | Spins up the dev server so you can yell at CSS in real time |
+| `bun build`     | Bundles everything into `./dist/` for production glory    |
+| `bun preview`   | Previews the build before you ship a typo to the world    |
+| `bun astro ...` | Talks to the Astro CLI directly, for power users only     |
 
-Inside of your Astro project, you'll see the following folders and files:
+## Project layout
 
 ```text
 /
-├── public/
+├── public/          static stuff (images, fonts, the truth)
 ├── src/
-│   └── pages/
-│       └── index.astro
+│   ├── components/  the building blocks of advocacy
+│   ├── layouts/     the wrapper around the wrapper
+│   └── pages/       routes, named after files
 └── package.json
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Pages live in `src/pages/`. Components live in `src/components/`. Things you don't want bundled live in `public/`. The elves live in your heart.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Contributing
 
-Any static assets, like images, can be placed in the `public/` directory.
+If you have ideas for new crisis stats, fake testimonials, or extremely on-brand merch concepts, open an issue. Bonus points if your suggestion is morally questionable but legally fine.
 
-## 🧞 Commands
+## Disclaimer
 
-All commands are run from the root of the project, from a terminal:
+PETE is a parody. It is not affiliated with, endorsed by, or in any way related to PETA, Santa, the North Pole, the Keebler corporation, or any actual or fictional elf union. Any resemblance to real workshops, current or shuttered, is satirical and protected by the First Amendment, vibes, and a generous reading of fair use.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `bun install`             | Installs dependencies                            |
-| `bun dev`             | Starts local dev server at `localhost:4321`      |
-| `bun build`           | Build your production site to `./dist/`          |
-| `bun preview`         | Preview your build locally, before deploying     |
-| `bun astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `bun astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+No elves were harmed in the making of this site. We checked. They said they were fine. They did not look fine.
